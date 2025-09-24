@@ -3,7 +3,7 @@ WORKDIR /ng-app
 COPY package*.json .
 RUN npm ci --force
 COPY . .
-RUN npm run build --configuration=production
+RUN npm run build
 
 
 # Use nginx as base image
