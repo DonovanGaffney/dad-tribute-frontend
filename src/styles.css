@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "primeicons/primeicons.css";
+
+
+@theme {
+  --color-irish-green: #019529;
+  --color-irish-green-light: #01a72e;
+}
+
+@layer components {
+  .checkbox {
+    @apply w-6 h-6 rounded border-gray-300 border-0 ring-[.1px] active:ring-1 ring-gray-300 active:border-blue-500 active:ring-blue-500 focus:ring-blue-500 focus:border-blue-500 checked:border-blue-500 checked:ring-blue-500
+  }
+  .button-style-sm {
+    @apply px-2 py-1 text-sm
+  }
+  .input-container {
+    @apply text-black bg-green-50 border-0 ring-1 ring-green-300 ring-inset focus-within:!ring-2 focus-within:!ring-green-900 outline-none !font-medium
+  }
+  .input-header {
+    @apply font-medium text-sm sm:text-base text-white
+  }
+  .input-padding {
+    @apply p-1.5 px-2 sm:p-2 sm:px-2.5 rounded-lg
+  }
+  .input-text {
+    @apply font-semibold text-base
+  }
+  .sub-text {
+    @apply text-xs sm:text-sm font-medium
+  }
+  .btn-primary {
+    @apply rounded-lg px-3 py-1.5 text-base font-medium flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white
+  }
+  .btn-secondary {
+    @apply rounded-lg px-3 py-1.5 text-base font-medium flex items-center gap-2 bg-white border border-gray-200 ring-inset hover:bg-gray-100 text-black
+  }
+  .btn-danger {
+    @apply rounded-lg px-3 py-1.5 text-base font-medium flex items-center gap-2 bg-red-500 border border-red-500 ring-inset hover:bg-red-600 text-white
+  }
+  .btn-link {
+    @apply cursor-pointer font-semibold text-blue-700 underline underline-offset-2 hover:no-underline
+  }
+  .btn-link-inverse {
+    @apply cursor-pointer font-semibold text-blue-700 hover:underline hover:underline-offset-2
+  }
+  .gray-container {
+    @apply border-gray-200 border p-4 flex flex-col rounded-xl bg-white
+  }
+  .navbar-button-container {
+    @apply flex flex-col gap-2
+  }
+  .navbar-button {
+    @apply w-full py-2 px-4 flex items-center gap-3 text-gray-800 hover:bg-gray-100 rounded-xl cursor-pointer text-lg min-w-max
+  }
+  .navbar-button-active {
+    @apply text-blue-700 bg-blue-50 hover:bg-blue-100
+  }
+  .team-button {
+    @apply w-full p-2 flex items-center gap-3 text-black hover:bg-gray-100 rounded-xl cursor-pointer text-sm
+  }
+  .nav-bar-button-group-text {
+    @apply text-gray-700 font-semibold pl-4 text-base
+  }
+  .sub-container-header-text {
+    @apply text-xl font-semibold
+  }
+
+  .new-table-container {
+    @apply border rounded-lg overflow-hidden
+  }
+  .new-table {
+    thead {
+      th {
+        @apply px-6 py-3 uppercase text-left text-xs font-medium text-gray-500
+      }
+
+      @apply bg-gray-50
+    }
+    tbody {
+      tr {
+        td {
+          @apply px-6 py-4
+        }
+        @apply text-black cursor-pointer hover:bg-gray-50 transition-colors
+      }
+      @apply bg-white divide-y divide-gray-200
+    }
+
+    @apply overflow-x-auto w-full divide-y divide-gray-200
+  }
+
+
+  .table {
+    thead {
+      th {
+        @apply text-sm text-left px-2 py-2 text-gray-700 border-b border-gray-200 bg-white font-medium
+      }
+    }
+    tbody {
+      tr {
+        td {
+          @apply text-left px-2 py-2
+        }
+        @apply odd:bg-white even:bg-slate-50/30 text-black
+      }
+      @apply divide-y divide-gray-100
+    }
+    @apply overflow-x-auto w-full
+  }
+  select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .dashboard-container {
+    @apply border-gray-200 border p-4 flex flex-col rounded-xl bg-white font-semibold w-full
+  }
+  .dashboard-container-header {
+    @apply text-gray-500 text-sm
+  }
+  .dashboard-container-body {
+    @apply text-2xl
+  }
+  [type=text], input:where(:not([type])), [type=email], [type=url], [type=password], [type=number], [type=date], [type=datetime-local], [type=month], [type=search], [type=tel], [type=time], [type=week], [multiple], textarea, select {
+    @apply appearance-none;
+  }
+  [type=checkbox]:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    @apply bg-blue-500
+  }
+  [type=checkbox], [type=radio] {
+    appearance: none;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    display: inline-block;
+    vertical-align: middle;
+    background-origin: border-box;
+    -webkit-user-select: none;
+    user-select: none;
+    flex-shrink: 0;
+    color: oklch(62.3% 0.214 259.815);
+    background-color: #fff;
+    border-width: 1px;
+    --tw-shadow: 0 0 #0000;
+  }
+  button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+}

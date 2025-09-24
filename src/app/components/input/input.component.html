@@ -1,0 +1,48 @@
+<div class="w-full flex flex-col gap-1 input-header">
+  <label *ngIf="labelText"
+         class="w-full text-white"
+         [ngClass]="{'pointer-events-none': disabled}"
+         [for]="id">{{labelText}} @if(isOptional){(Optional)}</label>
+
+  <div class="flex items-center group input-padding input-text gap-1 input-container"
+      [ngClass]="{'pointer-events-none opacity-50 !cursor-not-allowed bg-gray-100': disabled}">
+    <i *ngIf="icon != ''" class="{{icon}} pr-1 text-base"
+       [ngClass]="{'text-black': isPrimary, 'text-white': !isPrimary}"></i>
+    <input class="rounded p-2 flex items-center"
+           [ngClass]="{'': isPrimary, 'group-hover:placeholder-gray-300 placeholder-off-white': !isPrimary}"
+           [type]="currentType"
+           [placeholder]="placeHolderText" [name]="id" [id]="id"
+           [mask]="inputMask"
+           [suffix]="maskSuffix"
+           [thousandSeparator]="thousandSeparator"
+           [prefix]="prefix"
+           [min]="min"
+           [max]="max"
+           [minlength]="minLength"
+           [maxlength]="maxLength"
+           [formControl]="formControl" />
+
+    @if(clearable) {
+      @if(control.value != '') {
+        <i class="text-xl icon-Close_round cursor-pointer" (click)="clearInput()"
+           [ngClass]="{'text-gray-500': isPrimary, 'text-white': !isPrimary}"></i>
+      }
+    } @else {
+      @if(isPassword) {
+        <button (click)="togglePassword()" type="button">
+          <i *ngIf="currentType === 'password'" class="pi pi-eye p-1 text-xl cursor-pointer"
+             [ngClass]="{'text-black': isPrimary, 'text-white': !isPrimary}"></i>
+          <i *ngIf="currentType === 'text'" class="pi pi-eye-slash p-1 text-xl cursor-pointer"
+             [ngClass]="{'text-black': isPrimary, 'text-white': !isPrimary}"></i>
+        </button>
+      }
+    }
+  </div>
+
+  @if(showingError && errorText != '') {
+    <p class="sub-text text-red-600">{{errorText}}</p>
+  }
+  @if(helperText && !showingError) {
+    <p class="sub-text text-zinc-800">{{helperText}}</p>
+  }
+</div>

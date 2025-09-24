@@ -1,0 +1,18 @@
+<div class="w-full h-full bg-green-700 flex flex-col p-4 sm:p-8 md:p-16 gap-8 text-white items-center">
+
+  <div class="flex flex-col w-full max-w-[700px] gap-8">
+    <h1 class="font-semibold text-4xl sm:text-5xl xl:text-7xl">Share your memory</h1>
+
+    <form class="flex flex-col gap-2" (ngSubmit)="onSubmit()">
+      <app-input labelText="Name" [isOptional]="true" [class]="'text-white'" [control]="name"></app-input>
+
+      <app-text-area labelText="Story" [rows]="7" [control]="story" errorText="A story is needed" [showingError]="hasErrors(story)"></app-text-area>
+
+      <app-multi-file-input [control]="fileControl"></app-multi-file-input>
+
+      <button class="hover:bg-irish-green bg-irish-green-light p-4 rounded-xl text-xl font-semibold cursor-pointer" type="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

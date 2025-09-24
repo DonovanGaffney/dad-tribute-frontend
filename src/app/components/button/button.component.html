@@ -1,0 +1,12 @@
+<button
+  [class]="'disabled:opacity-50 disabled:cursor-not-allowed ' + customClass"
+  [ngClass]="{'btn-primary': variant == ButtonVariant.Primary,
+             'btn-secondary': variant == ButtonVariant.Secondary,
+             'btn-danger': variant == ButtonVariant.Danger}"
+  (click)="click()"
+  [type]="type" [disabled]="disabled()">
+  @if(icon != undefined && icon != '') {
+   <i [class]="'' + icon"></i>
+  }
+  {{text}}
+</button>
