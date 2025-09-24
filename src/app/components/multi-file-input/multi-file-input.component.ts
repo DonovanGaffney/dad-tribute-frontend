@@ -13,7 +13,7 @@ import {ImageDropDirective} from "../../directives/ImageDrop.directive";
     ClickStopPropagation
   ],
   templateUrl: './multi-file-input.component.html',
-  styleUrl: './multi-file-input.component.scss'
+  styleUrl: './multi-file-input.component.css'
 })
 export class MultiFileInputComponent implements OnInit, OnDestroy {
   @Input({required: true}) control!: FormControl<File[]>;
