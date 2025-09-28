@@ -8,6 +8,13 @@
   --color-irish-green-light: #01a72e;
 }
 
+html, body {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer components {
   .checkbox {
     @apply w-6 h-6 rounded border-gray-300 border-0 ring-[.1px] active:ring-1 ring-gray-300 active:border-blue-500 active:ring-blue-500 focus:ring-blue-500 focus:border-blue-500 checked:border-blue-500 checked:ring-blue-500;

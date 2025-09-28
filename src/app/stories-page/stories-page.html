@@ -1,1 +1,24 @@
-<p>stories-page works!</p>
+<div class="w-full h-full min-h-full bg-green-700 flex flex-col p-4 sm:p-8 md:p-16 gap-8 text-white items-center">
+  <div class="flex flex-col w-full max-w-[700px] gap-2">
+    <h1 class="font-semibold text-4xl sm:text-5xl xl:text-7xl">Stories</h1>
+
+    <div class="flex flex-col gap-4">
+
+      @for(story of stories(); track story) {
+        <div class="w-full bg-white rounded-xl p-4 text-black flex flex-col gap-2">
+          <div class="flex justify-between text-xl font-semibold mb-2 border-b-2 border-green-500">
+            <h2 class="">{{story.name}}</h2>
+            <p>{{story.createdDate}}</p>
+          </div>
+
+          <p>
+            {{story.story}}
+          </p>
+        </div>
+      }
+
+    </div>
+
+
+  </div>
+</div>
