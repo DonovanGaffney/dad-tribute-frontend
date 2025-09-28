@@ -17,6 +17,14 @@
           <p>
             {{story.story}}
           </p>
+
+          <div>
+            @for(image of story.images; track image) {
+              @if(image.endsWith('.jpg') || image.endsWith('.jpeg') || image.endsWith('.png')) {
+                <app-image [imageUrl]="image" (onClose)="imageOpen.set(false)" (onOpen)="imageOpen.set(true)"></app-image>
+              }
+            }
+          </div>
         </div>
       }
 

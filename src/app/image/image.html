@@ -1,0 +1,34 @@
+<div>
+  <!-- Image Thumbnail -->
+  <div class="relative inline-block w-16">
+    <img
+      [src]="imageUrl()"
+      alt="Image Thumbnail"
+      class="cursor-pointer hover:opacity-80 transition"
+      (click)="open()"
+    />
+  </div>
+
+  <!-- Fullscreen Image Modal -->
+  <div
+    *ngIf="isImageFullScreen()"
+    class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+  >
+    <div class="relative w-full h-full flex items-center justify-center">
+      <!-- Full Image -->
+      <img
+        [src]="imageUrl()"
+        alt="Fullscreen Image"
+        class="max-w-full max-h-full object-contain"
+      />
+
+      <!-- Close Button -->
+      <button
+        class="absolute top-5 right-5 text-white text-3xl font-bold hover:text-gray-400 transition"
+        (click)="close()"
+      >
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+  </div>
+</div>

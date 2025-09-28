@@ -8,6 +8,7 @@ import {StoryService} from '../services/story';
 import { interval, Subscription } from 'rxjs';
 import {DatePipe} from '@angular/common';
 import {RouterLink} from '@angular/router';
+import {Image} from '../image/image';
 
 @Component({
   selector: 'app-stories-page',
@@ -16,12 +17,14 @@ import {RouterLink} from '@angular/router';
     ReactiveFormsModule,
     DatePipe,
     RouterLink,
+    Image,
   ],
   templateUrl: './stories-page.html',
   styleUrl: './stories-page.css'
 })
 export class StoriesPage implements OnInit, OnDestroy {
   stories: WritableSignal<StoryDto[]> = signal([]);
+  imageOpen: WritableSignal<boolean> = signal(false);
   private storiesSubscription?: Subscription;
 
   constructor(private storyService: StoryService) {
@@ -30,8 +33,11 @@ export class StoriesPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.updateStories();
 
-    this.storiesSubscription = interval(10000).subscribe(() => {
-      this.updateStories();
+    let minutes = 5;
+    this.storiesSubscription = interval(minutes * 60 * 1000).subscribe(() => {
+      if(!this.imageOpen()) {
+        this.updateStories();
+      }
     });
 
   }
