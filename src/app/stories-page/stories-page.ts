@@ -6,13 +6,15 @@ import {TextAreaComponent} from "../components/text-area/text-area.component";
 import {StoryDto} from './stories.models';
 import {StoryService} from '../services/story';
 import { interval, Subscription } from 'rxjs';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-stories-page',
-    imports: [
-        FormsModule,
-        ReactiveFormsModule,
-    ],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    DatePipe,
+  ],
   templateUrl: './stories-page.html',
   styleUrl: './stories-page.css'
 })
