@@ -1,6 +1,6 @@
 <div>
   <!-- Image Thumbnail -->
-  <div class="relative inline-block w-16">
+  <div class="relative inline-block w-24">
     <img
       [src]="imageUrl()"
       alt="Image Thumbnail"
@@ -16,7 +16,7 @@
   >
     <div class="relative w-full h-full flex items-center justify-center">
       <!-- Full Image -->
-      <img
+      <img (clickOutside)="close()"
         [src]="imageUrl()"
         alt="Fullscreen Image"
         class="max-w-full max-h-full object-contain"

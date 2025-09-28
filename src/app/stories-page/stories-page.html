@@ -18,7 +18,7 @@
             {{story.story}}
           </p>
 
-          <div>
+          <div class="flex gap-2 overflow-x-auto">
             @for(image of story.images; track image) {
               @if(image.endsWith('.jpg') || image.endsWith('.jpeg') || image.endsWith('.png')) {
                 <app-image [imageUrl]="image" (onClose)="imageOpen.set(false)" (onOpen)="imageOpen.set(true)"></app-image>

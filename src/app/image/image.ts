@@ -1,10 +1,12 @@
 import {Component, input, output, signal, WritableSignal} from '@angular/core';
 import {NgIf} from '@angular/common';
+import {ClickOutsideDirective} from '../directives/clickOutside.directive';
 
 @Component({
   selector: 'app-image',
   imports: [
-    NgIf
+    NgIf,
+    ClickOutsideDirective
   ],
   templateUrl: './image.html',
   styleUrl: './image.css'
