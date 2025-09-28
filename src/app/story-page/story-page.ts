@@ -4,7 +4,7 @@ import {TextAreaComponent} from '../components/text-area/text-area.component';
 import {MultiFileInputComponent} from '../components/multi-file-input/multi-file-input.component';
 import {AbstractControl, FormControl, FormGroup, FormsModule, Validators} from '@angular/forms';
 import {StoryService} from '../services/story';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-story-page',
@@ -12,7 +12,8 @@ import {Router} from '@angular/router';
     InputComponent,
     TextAreaComponent,
     MultiFileInputComponent,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './story-page.html',
   styleUrl: './story-page.css'

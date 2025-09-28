@@ -16,4 +16,8 @@ export class MemoryPage {
   goToStoryPage() {
     this.router.navigate(['/story']);
   }
+
+  goToStories() {
+    this.router.navigate(['/stories']);
+  }
 }

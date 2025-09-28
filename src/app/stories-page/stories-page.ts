@@ -7,6 +7,7 @@ import {StoryDto} from './stories.models';
 import {StoryService} from '../services/story';
 import { interval, Subscription } from 'rxjs';
 import {DatePipe} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-stories-page',
@@ -14,6 +15,7 @@ import {DatePipe} from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     DatePipe,
+    RouterLink,
   ],
   templateUrl: './stories-page.html',
   styleUrl: './stories-page.css'
